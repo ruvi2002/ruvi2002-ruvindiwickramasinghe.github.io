@@ -101,8 +101,8 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:40;width
 .two li{margin:0 0 8px 18px}
 /* contact */
 .cta{text-align:left;padding:56px 48px;background:linear-gradient(135deg,rgba(13,148,136,.35),rgba(245,158,11,.25));border:1px solid rgba(45,212,191,.3);border-radius:28px}
-.cta h2{margin-bottom:12px}
-.cta p{font-size:1.1rem;margin-bottom:26px;color:#d3ecee}
+.cta h2{margin-bottom:14px}
+.cta p{font-size:1.1rem;margin-bottom:0;color:#d3ecee}
 .cl{list-style:none;margin-bottom:26px}
 .cl li{margin-bottom:8px}
 .cl a{color:var(--lblue);text-decoration:none}
@@ -118,18 +118,14 @@ footer a{color:var(--lblue);text-decoration:none}
 .btn.p::after{content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3.2s infinite}
 @keyframes shine{0%{left:-70%}60%,100%{left:130%}}
 /* hero diagram */
-.hero-wrap{position:relative}
-.diagram{position:absolute;right:-30px;top:50%;transform:translateY(-55%);width:min(460px,42vw);opacity:.95;pointer-events:none}
-.diagram .flow{stroke-dasharray:6 8;animation:dash 1.4s linear infinite}
+.panel .flow{stroke-dasharray:6 8;animation:dash 1.4s linear infinite}
 @keyframes dash{to{stroke-dashoffset:-14}}
-.diagram .nd{animation:bob 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-.diagram .nd:nth-of-type(2n){animation-delay:-1.5s}.diagram .nd:nth-of-type(3n){animation-delay:-3s}
+.panel .nd{animation:bob 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.panel .nd:nth-of-type(2n){animation-delay:-1.5s}.panel .nd:nth-of-type(3n){animation-delay:-3s}
 @keyframes bob{50%{transform:translateY(-8px)}}
-.diagram .ring{animation:ring 2.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.panel .ring{animation:ring 2.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
 @keyframes ring{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.2);opacity:0}}
 /* stats */
-.stats{display:flex;flex-wrap:wrap;gap:34px;margin-top:40px}
-.stats div{font-size:.82rem;color:#7f9ea3;letter-spacing:.06em;text-transform:uppercase}
 .stats b{display:block;font-family:'Space Grotesk';font-size:2.3rem;color:#fff;letter-spacing:-.02em;text-transform:none}
 .stats b em{font-style:normal;color:var(--lblue)}
 /* marquee */
@@ -157,20 +153,93 @@ footer a{color:var(--lblue);text-decoration:none}
 .chips span{transition:.25s}.chips span:hover{transform:translateY(-3px);background:rgba(13,148,136,.35)}
 .dot{animation:pulse 2s infinite}
 .glass.in{transition:opacity .8s ease,transform .18s ease-out,border-color .3s}
-@media(max-width:920px){.diagram{display:none}}
-/* reveal */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
-.rv.in{opacity:1;transform:none}
-@media(max-width:920px){
+
+/* ===== alignment pass ===== */
+.wrap{max-width:1120px}
+#home{padding-top:130px;padding-bottom:70px}
+#home .wrap{width:100%}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center}
+#home h1{font-size:clamp(2.3rem,4.7vw,4rem)}
+.roles{max-width:none}
+.panel{border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border-radius:24px;padding:22px 24px 26px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.panel-head{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#7f9ea3;padding-bottom:14px;margin-bottom:10px;border-bottom:1px solid var(--line)}
+.panel-head span:first-child{color:#fff;font-family:'Space Grotesk';font-weight:600}
+.live{display:flex;align-items:center;gap:8px;text-transform:none;letter-spacing:0}
+.live i{width:7px;height:7px;border-radius:50%;background:#3ddc97;box-shadow:0 0 8px #3ddc97;animation:pulse 2s infinite}
+.panel svg{display:block;width:100%;height:auto}
+.blocks{max-width:none;margin-top:72px;gap:18px}
+.blocks div{display:flex;flex-direction:column;justify-content:center;min-height:84px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px;padding-top:30px;border-top:1px solid var(--line)}
+.stats div{font-size:.8rem;color:#7f9ea3;letter-spacing:.08em;text-transform:uppercase}
+.stats b{display:block;font-family:'Space Grotesk';font-size:2.4rem;line-height:1.1;color:#fff;letter-spacing:-.02em;text-transform:none}
+/* nav fits at all widths */
+.links a{font-size:.8rem;padding:8px 11px}
+/* section heads */
+h2{margin-bottom:40px}
+.about p{max-width:720px}
+/* project stories: title column | detail column */
+.story{display:grid;grid-template-columns:300px minmax(0,1fr);column-gap:44px;row-gap:0;align-items:start}
+.story h3{grid-column:1;grid-row:1;margin:0 0 12px}
+.story>.chips.sm:nth-of-type(1){grid-column:1;grid-row:2;margin:0}
+.story>p:nth-of-type(1){grid-column:2;grid-row:1}
+.story>p:nth-of-type(2){grid-column:2;grid-row:2}
+.story>.chips.sm:last-child{grid-column:2;grid-row:3;margin-top:8px}
+.story p{margin-bottom:12px;max-width:none}
+.chips.sm{gap:8px}
+/* equal-height cards, consistent inner layout */
+.card{display:flex;flex-direction:column}
+.card p{margin-top:auto}
+.card h3{min-height:3.5em}
+.two{align-items:stretch}
+.cta{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.cta .cl{margin:0}
+@media(max-width:1020px){
  .burger{display:block}
  nav{border-radius:24px;flex-wrap:wrap}
  .links{display:none;flex-direction:column;width:100%;padding:8px 0 10px}
  .links.open{display:flex}
- .blocks{grid-template-columns:1fr}
- .two{grid-template-columns:1fr}
- section{padding:70px 0}
- .cta{padding:36px 26px}
+ .hero-grid{grid-template-columns:1fr;gap:40px}
+ .panel{max-width:520px}
+ #home{padding-top:110px}
+ .story{grid-template-columns:1fr}
+ .story h3,.story>.chips.sm:nth-of-type(1),.story>p:nth-of-type(1),.story>p:nth-of-type(2),.story>.chips.sm:last-child{grid-column:1;grid-row:auto}
+ .story h3{margin-bottom:10px}.story>.chips.sm:nth-of-type(1){margin-bottom:14px}
+ .cta{grid-template-columns:1fr}
 }
+@media(max-width:640px){
+ .blocks{grid-template-columns:1fr;margin-top:48px}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .card h3{min-height:0}
+ .two{grid-template-columns:1fr}
+}
+
+/* ===== buttons + project card alignment ===== */
+.btns{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{margin:0;border:1px solid transparent;min-width:168px;text-align:center;line-height:1.2;display:inline-flex;align-items:center;justify-content:center}
+.btn.g{border-color:rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.06)}
+.btn.g:hover{background:rgba(45,212,191,.18);border-color:var(--lblue)}
+.cta .btns{margin-top:6px}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.card{padding:28px;display:flex;flex-direction:column;align-items:flex-start}
+.card h3{min-height:2.5em;margin:12px 0 12px}
+.card p{margin:0 0 20px;margin-top:0}
+.ctags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:18px;border-top:1px solid var(--line);width:100%}
+.ctags span{font-size:.74rem;font-weight:500;color:#cfeeea;background:rgba(13,148,136,.16);border:1px solid rgba(45,212,191,.28);padding:4px 11px;border-radius:999px;line-height:1.4}
+@media(max-width:1020px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.card h3{min-height:0}.btn{flex:1 1 100%}}
+
+/* ===== contact buttons: compact, evenly spaced ===== */
+.cta .cl{margin:0 0 26px}
+.cta .btns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:0}
+.cta .btn{min-width:0;width:100%;flex:none;padding:14px 10px;border-radius:14px;font-size:.92rem}
+@media(max-width:700px){.cta .btn{flex:none}.cta .btns{gap:10px}}
+@media(max-width:340px){.cta .btns{grid-template-columns:1fr}}
+
+#toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);background:#0d9488;color:#fff;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.92rem;opacity:0;pointer-events:none;transition:.35s;z-index:99;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -195,25 +264,39 @@ footer a{color:var(--lblue);text-decoration:none}
 </nav>
 
 <section id="home">
- <div class="wrap hero-wrap">
-  <svg class="diagram" viewBox="0 0 460 420" fill="none" aria-hidden="true">
- <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs>
- <path class="flow" d="M80 70 H190 M270 70 H340 V150 M340 190 V250 H270 M190 250 H120 V300 M120 340 V370 H230 M300 370 H390" stroke="url(#g)" stroke-width="2"/>
- <g class="nd"><rect x="20" y="40" width="130" height="60" rx="14" fill="rgba(13,148,136,.18)" stroke="#2dd4bf"/><text x="85" y="76" text-anchor="middle" fill="#fff" font-size="14" font-family="Inter">Understand</text></g>
- <g class="nd"><rect x="190" y="40" width="130" height="60" rx="14" fill="rgba(13,148,136,.18)" stroke="#2dd4bf"/><text x="255" y="76" text-anchor="middle" fill="#fff" font-size="14" font-family="Inter">Map</text></g>
- <g class="nd"><polygon points="340,150 385,170 340,190 295,170" fill="rgba(245,158,11,.2)" stroke="#f59e0b"/><text x="340" y="175" text-anchor="middle" fill="#fff" font-size="12" font-family="Inter">Approve?</text></g>
- <g class="nd"><rect x="190" y="220" width="130" height="60" rx="14" fill="rgba(13,148,136,.18)" stroke="#2dd4bf"/><text x="255" y="256" text-anchor="middle" fill="#fff" font-size="14" font-family="Inter">Specify</text></g>
- <g class="nd"><rect x="55" y="300" width="130" height="60" rx="14" fill="rgba(13,148,136,.18)" stroke="#2dd4bf"/><text x="120" y="336" text-anchor="middle" fill="#fff" font-size="14" font-family="Inter">Test</text></g>
- <g class="nd"><circle cx="265" cy="370" r="34" fill="rgba(245,158,11,.2)" stroke="#f59e0b"/><text x="265" y="375" text-anchor="middle" fill="#fff" font-size="13" font-family="Inter">Go-live</text></g>
- <circle class="ring" cx="85" cy="70" r="10" stroke="#2dd4bf"/><circle class="ring" cx="265" cy="370" r="10" stroke="#f59e0b" style="animation-delay:-1.3s"/>
-</svg>
-  <div class="pill rv"><i></i>Open to Business Analyst and ERP consultant roles</div>
-  <h1 class="rv"><span class="grad">Ruvindi<br>Wickramasinghe</span></h1>
-  <div class="type rv" id="type"></div>
-  <p class="roles rv">Business Analyst | Systems Analyst | ERP Functional Consultant | Project Coordinator | QA and UAT Analyst</p>
-  <p class="tag rv">Clear requirements. Confident delivery.</p>
-  <p class="intro rv">I turn business needs into clear requirements and support each project from analysis through testing to go-live.</p>
-  <div class="rv"><a class="btn p" href="#projects">See my projects</a><a class="btn g" href="#contact">Contact me</a></div>
+ <div class="wrap">
+  <div class="hero-grid">
+   <div class="hero-text">
+    <div class="pill rv"><i></i>Open to Business Analyst and ERP consultant roles</div>
+    <h1 class="rv"><span class="grad">Ruvindi<br>Wickramasinghe</span></h1>
+    <div class="type rv" id="type"></div>
+    <p class="roles rv">Business Analyst | Systems Analyst | ERP Functional Consultant | Project Coordinator | QA and UAT Analyst</p>
+    <p class="tag rv">Clear requirements. Confident delivery.</p>
+    <p class="intro rv">I turn business needs into clear requirements and support each project from analysis through testing to go-live.</p>
+    <div class="btns rv"><a class="btn p" href="#projects">See my projects</a><a class="btn g" href="#contact">Contact me</a></div>
+   </div>
+   <div class="panel rv">
+    <div class="panel-head"><span>Delivery flow</span><span class="live"><i></i>Analysis to go-live</span></div>
+    <svg viewBox="0 0 460 350" fill="none" role="img" aria-label="Flow diagram: Understand, Map, Specify, Approve, Test, Go-live">
+     <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs>
+     <path id="route" class="flow" d="M100 58 H360 V178 H100 V290 H360" stroke="url(#g)" stroke-width="2"/>
+     <!-- nodes (opaque so the route hides behind them) -->
+     <g class="nd"><rect x="30" y="30" width="140" height="56" rx="14" fill="#0b2f3a" stroke="#2dd4bf"/><text x="100" y="63" text-anchor="middle" fill="#fff" font-size="15" font-family="Inter,sans-serif" font-weight="500">Understand</text></g>
+     <g class="nd"><rect x="290" y="30" width="140" height="56" rx="14" fill="#0b2f3a" stroke="#2dd4bf"/><text x="360" y="63" text-anchor="middle" fill="#fff" font-size="15" font-family="Inter,sans-serif" font-weight="500">Map</text></g>
+     <g class="nd"><rect x="290" y="150" width="140" height="56" rx="14" fill="#0b2f3a" stroke="#2dd4bf"/><text x="360" y="183" text-anchor="middle" fill="#fff" font-size="15" font-family="Inter,sans-serif" font-weight="500">Specify</text></g>
+     <g class="nd"><polygon points="100,148 170,178 100,208 30,178" fill="#3a2a0b" stroke="#f59e0b"/><text x="100" y="183" text-anchor="middle" fill="#fff" font-size="14" font-family="Inter,sans-serif" font-weight="500">Approved?</text></g>
+     <g class="nd"><rect x="30" y="262" width="140" height="56" rx="14" fill="#0b2f3a" stroke="#2dd4bf"/><text x="100" y="295" text-anchor="middle" fill="#fff" font-size="15" font-family="Inter,sans-serif" font-weight="500">Test</text></g>
+     <g class="nd"><rect x="290" y="262" width="140" height="56" rx="28" fill="#3a2a0b" stroke="#f59e0b"/><text x="360" y="295" text-anchor="middle" fill="#fff" font-size="15" font-family="Inter,sans-serif" font-weight="600">Go-live</text></g>
+     <!-- arrowheads at each node edge -->
+     <g fill="#2dd4bf"><polygon points="290,58 279,52 279,64"/><polygon points="360,150 354,139 366,139"/><polygon points="170,178 181,172 181,184"/></g>
+     <g fill="#f59e0b"><polygon points="100,262 94,251 106,251"/><polygon points="290,290 279,284 279,296"/></g>
+     <text x="112" y="240" fill="#2dd4bf" font-size="12" font-family="Inter,sans-serif">Yes</text>
+     <!-- travelling dot -->
+     <circle r="6" fill="#fff"><animateMotion dur="9s" repeatCount="indefinite" path="M100 58 H360 V178 H100 V290 H360"/></circle>
+     <circle class="ring" cx="100" cy="58" r="8" stroke="#2dd4bf"/><circle class="ring" cx="360" cy="290" r="8" stroke="#f59e0b" style="animation-delay:-1.3s"/>
+    </svg>
+   </div>
+  </div>
   <div class="blocks rv"><div><small>SECTOR</small>Retail</div><div><small>SECTOR</small>Government</div><div><small>SECTOR</small>Education</div></div>
   <div class="stats rv"><div><b data-n="6">0</b>Projects</div><div><b data-n="3">0</b>Sectors</div><div><b data-n="5">0</b>Step process</div><div><b data-n="3">0</b>Roles held</div></div>
  </div>
@@ -235,12 +318,12 @@ footer a{color:var(--lblue);text-decoration:none}
   <span class="eyebrow rv">Projects</span>
   <h2 class="rv">Selected work</h2>
   <div class="grid">
-   <div class="glass card rv"><div class="n">01</div><h3>Singer Horizon: built for Singer's branch managers</h3><p><span class="role">I owned all the BA work.</span> Turned branch needs into requirements, process flows, user stories, acceptance criteria and UAT support.</p></div>
-   <div class="glass card rv"><div class="n">02</div><h3>DOE Online Certificate System: a fresh start for the Department of Examinations</h3><p><span class="role">I shaped what the new system needed to do.</span> Delivered requirements and process documentation.</p></div>
-   <div class="glass card rv"><div class="n">03</div><h3>MOB POS and Mini ERP: counter to back office</h3><p><span class="role">Project coordinator keeping client, developers and QA moving together.</span> Delivered requirements, progress tracking and testing support.</p></div>
-   <div class="glass card rv"><div class="n">04</div><h3>Retail shops: Tiny Togs, TNR and Mama Cook</h3><p><span class="role">Project coordinator, one steady hand across three shops.</span> Coordinated delivery for each shop. Tracked progress, supported user testing and go-live.</p></div>
-   <div class="glass card rv"><div class="n">05</div><h3>Government Database Management System</h3><p><span class="role">Project coordinator for a government sector client.</span> Coordinated the project and documented requirements. Supported data validation to keep the data reliable.</p></div>
-   <div class="glass card rv"><div class="n">06</div><h3>DP Education Project</h3><p><span class="role">Project coordinator keeping delivery on track.</span> Coordinated delivery and tracked progress.</p></div>
+   <div class="glass card rv"><div class="n">01</div><h3>Mobile app for retail branch managers</h3><p><span class="role">I owned all the BA work.</span> Turned branch needs into requirements, process flows, user stories, acceptance criteria and UAT support.</p><div class="ctags"><span>Requirements Gathering</span><span>Stakeholder Interviews</span><span>BRD</span><span>Process Flows</span><span>User Stories</span><span>Acceptance Criteria</span><span>UAT Support</span><span>Defect Validation</span></div></div>
+   <div class="glass card rv"><div class="n">02</div><h3>Online certificate system for a government department</h3><p><span class="role">I shaped what the new system needed to do.</span> Delivered requirements and process documentation.</p><div class="ctags"><span>Current-State Analysis</span><span>Future-State Process</span><span>Process Mapping</span><span>BRD</span><span>Stakeholder Workshops</span><span>Documentation</span></div></div>
+   <div class="glass card rv"><div class="n">03</div><h3>Point-of-sale and mini ERP for a retail clothing brand</h3><p><span class="role">Project coordinator keeping client, developers and QA moving together.</span> Delivered requirements, progress tracking and testing support.</p><div class="ctags"><span>Requirements Capture</span><span>Progress Tracking</span><span>Status Reporting</span><span>Risk Escalation</span><span>Testing Support</span><span>POS and ERP</span></div></div>
+   <div class="glass card rv"><div class="n">04</div><h3>Systems for three retail shops</h3><p><span class="role">Project coordinator, one steady hand across three shops.</span> Coordinated delivery for each shop. Tracked progress, supported user testing and go-live.</p><div class="ctags"><span>Delivery Coordination</span><span>Progress Tracking</span><span>User Testing</span><span>Go-live Support</span><span>Stakeholder Communication</span></div></div>
+   <div class="glass card rv"><div class="n">05</div><h3>Document database system for a government client</h3><p><span class="role">Project coordinator for a government sector client.</span> Coordinated the project and documented requirements. Supported data validation to keep the data reliable.</p><div class="ctags"><span>Project Coordination</span><span>Requirements Documentation</span><span>Data Validation</span><span>MySQL</span></div></div>
+   <div class="glass card rv"><div class="n">06</div><h3>Education sector delivery project</h3><p><span class="role">Project coordinator keeping delivery on track.</span> Coordinated delivery and tracked progress.</p><div class="ctags"><span>Delivery Coordination</span><span>Progress Tracking</span><span>Status Reporting</span><span>Stakeholder Communication</span></div></div>
   </div>
  </div>
 </section>
@@ -305,15 +388,19 @@ footer a{color:var(--lblue);text-decoration:none}
 <section id="contact">
  <div class="wrap">
   <div class="cta rv">
-   <span class="eyebrow">Contact</span>
-   <h2><span class="grad">Let's work together.</span></h2>
-   <p>I am open to business analyst and ERP consultant roles.</p>
-   <ul class="cl">
-    <li>Email: <a href="mailto:ruvindiwickramasinghe@gmail.com">ruvindiwickramasinghe@gmail.com</a></li>
-    <li>LinkedIn: <a href="https://linkedin.com/in/wickramasinghe123" target="_blank" rel="noopener">linkedin.com/in/wickramasinghe123</a></li>
-    <li>Phone: <a href="tel:0713308672">0713308672</a></li>
-   </ul>
-   <a class="btn p" href="mailto:ruvindiwickramasinghe@gmail.com">Email me</a>
+   <div>
+    <span class="eyebrow">Contact</span>
+    <h2><span class="grad">Let's work together.</span></h2>
+    <p>I am open to business analyst and ERP consultant roles.</p>
+   </div>
+   <div>
+    <ul class="cl">
+     <li>Email: <a href="mailto:ruvindiwickramasinghe@gmail.com">ruvindiwickramasinghe@gmail.com</a></li>
+     <li>LinkedIn: <a href="https://linkedin.com/in/wickramasinghe123" target="_blank" rel="noopener">linkedin.com/in/wickramasinghe123</a></li>
+     <li>Phone: <a href="tel:+94713308672">0713308672</a></li>
+    </ul>
+    <div class="btns"><a class="btn p" href="mailto:ruvindiwickramasinghe@gmail.com?subject=Hello%20Ruvindi">Email me</a><a class="btn g" href="https://linkedin.com/in/wickramasinghe123" target="_blank" rel="noopener">LinkedIn</a><a class="btn g" href="tel:+94713308672">Call me</a></div>
+   </div>
   </div>
  </div>
 </section>
@@ -358,6 +445,22 @@ document.querySelectorAll('.card,.sk .glass').forEach(c=>{
 });
 // hero parallax
 addEventListener('scroll',()=>{document.querySelectorAll('.blob').forEach((b,i)=>b.style.marginTop=(scrollY*(.05+i*.04))+'px')},{passive:true});
+
+// email + phone buttons: work on phones AND computers
+const EMAIL='ruvindiwickramasinghe@gmail.com',PHONE='0713308672';
+const mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+const toast=document.getElementById('toast');
+function say(m){toast.textContent=m;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3200)}
+document.querySelectorAll('a[href^="mailto:"]').forEach(a=>a.addEventListener('click',e=>{
+  if(mobile)return;                       // phone: opens the mail app
+  e.preventDefault();                     // computer: opens Gmail compose in a new tab
+  window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+EMAIL+'&su='+encodeURIComponent('Hello Ruvindi'),'_blank','noopener');
+}));
+document.querySelectorAll('a[href^="tel:"]').forEach(a=>a.addEventListener('click',e=>{
+  if(mobile)return;                       // phone: starts the call
+  e.preventDefault();                     // computer: copy the number
+  (navigator.clipboard?navigator.clipboard.writeText(PHONE):Promise.reject()).then(()=>say('Phone number copied: '+PHONE)).catch(()=>say('Call me on '+PHONE));
+}));
 // typing effect
 const words=['Business Analyst','ERP Functional Consultant','Project Coordinator','QA and UAT Analyst','Systems Analyst'];
 const t=document.getElementById('type');let w=0,c=0,del=false;
@@ -369,5 +472,6 @@ const t=document.getElementById('type');let w=0,c=0,del=false;
   c+=del?-1:1;setTimeout(tick,del?35:75);
 })();
 </script>
+<div id="toast" role="status"></div>
 </body>
 </html>
