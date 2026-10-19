@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruvindi Wickramasinghe | Business Analyst</title>
+<meta name="description" content="Business Analyst, ERP Functional Consultant and Project Coordinator. Clear requirements. Confident delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05141b;--navy:#0a2530;--panel:rgba(255,255,255,.04);--line:rgba(255,255,255,.09);--blue:#0d9488;--lblue:#2dd4bf;--txt:#b4c9cc;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;overflow-x:hidden}
+h1,h2,h3{font-family:'Space Grotesk',Inter,sans-serif;color:var(--white);line-height:1.15;letter-spacing:-.02em}
+/* background */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.bg::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 75%)}
+.blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:.45;animation:float 18s ease-in-out infinite}
+.b1{width:520px;height:520px;background:#0d9488;top:-120px;left:-100px}
+.b2{width:420px;height:420px;background:#f59e0b;top:30%;right:-140px;animation-delay:-6s;opacity:.28}
+.b3{width:420px;height:420px;background:#22d3ee;bottom:-160px;left:25%;animation-delay:-12s;opacity:.25}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,-40px) scale(1.12)}}
+#glow{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,rgba(45,212,191,.14),transparent 65%);transform:translate(-50%,-50%);left:50%;top:30%}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--lblue),#f59e0b);z-index:50}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+section{padding:100px 0}
+.eyebrow{display:inline-block;color:var(--lblue);font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:36px}
+.grad{background:linear-gradient(100deg,#fff 10%,var(--lblue) 55%,#fbbf24);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* nav */
+nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:40;width:min(1120px,calc(100% - 24px));background:rgba(12,20,42,.65);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:999px;padding:8px 10px 8px 22px;display:flex;align-items:center;justify-content:space-between}
+.brand{color:#fff;font-family:'Space Grotesk';font-weight:700;text-decoration:none;display:flex;align-items:center;gap:9px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--lblue);box-shadow:0 0 12px var(--lblue)}
+.links{display:flex;list-style:none;gap:2px}
+.links a{color:var(--txt);text-decoration:none;font-size:.83rem;padding:8px 13px;border-radius:999px;display:block;transition:.2s}
+.links a:hover{color:#fff}
+.links a.active{color:#fff;background:linear-gradient(135deg,rgba(13,148,136,.7),rgba(45,212,191,.25));box-shadow:0 0 0 1px rgba(45,212,191,.35)}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer;padding:0 12px}
+/* hero */
+#home{min-height:100vh;display:flex;align-items:center;padding-top:120px}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--panel);padding:7px 16px;border-radius:999px;font-size:.82rem;margin-bottom:26px}
+.pill i{width:8px;height:8px;border-radius:50%;background:#3ddc97;box-shadow:0 0 10px #3ddc97;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+#home h1{font-size:clamp(2.7rem,7.5vw,5.4rem);margin-bottom:20px}
+.type{font-family:'Space Grotesk';font-size:clamp(1.1rem,2.4vw,1.5rem);color:var(--lblue);min-height:2em;margin-bottom:6px}
+.type::after{content:"|";margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.roles{font-size:.9rem;color:#7f9ea3;margin-bottom:26px;max-width:640px}
+.tag{font-family:'Space Grotesk';font-size:clamp(1.3rem,2.6vw,1.8rem);color:#fff;margin-bottom:10px}
+.intro{max-width:540px;margin-bottom:34px}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;margin:0 10px 12px 0;transition:.25s}
+.btn.p{background:linear-gradient(135deg,var(--blue),#14b8a6);color:#fff;box-shadow:0 8px 30px rgba(13,148,136,.45)}
+.btn.g{border:1px solid rgba(255,255,255,.25);color:#fff;background:var(--panel)}
+.btn:hover{transform:translateY(-3px)}
+.blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:56px;max-width:700px}
+.blocks div{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;color:#fff;font-family:'Space Grotesk';font-weight:600;backdrop-filter:blur(8px)}
+.blocks small{display:block;color:var(--lblue);font-family:Inter;font-weight:500;font-size:.72rem;letter-spacing:.12em;margin-bottom:4px}
+/* glass cards */
+.glass{background:var(--panel);border:1px solid var(--line);border-radius:20px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+.glass::before{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(45,212,191,.16),transparent 60%);opacity:0;transition:.3s;pointer-events:none}
+.glass:hover{transform:translateY(-5px);border-color:rgba(45,212,191,.4)}
+.glass:hover::before{opacity:1}
+/* about */
+.about p{max-width:680px;font-size:1.12rem;margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{border:1px solid rgba(45,212,191,.35);background:rgba(13,148,136,.15);color:#d7fbf6;padding:8px 18px;border-radius:999px;font-size:.88rem;font-weight:500}
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{padding:28px}
+.card .n{font-family:'Space Grotesk';font-size:2.4rem;font-weight:700;background:linear-gradient(135deg,var(--lblue),transparent);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.card h3{font-size:1.18rem;margin:14px 0 12px}
+.card p{font-size:.93rem}
+.role{color:#fff;font-weight:600}
+/* stories */
+.story{padding:30px 32px;margin-bottom:18px}
+.story h3{font-size:1.35rem;margin-bottom:14px}
+.story p{max-width:780px;margin-bottom:8px}
+.chips.sm{margin:0 0 14px}.chips.sm span{padding:5px 13px;font-size:.78rem}.story .chips.sm:last-child{margin:14px 0 0}.story .chips.sm:last-child span{background:var(--panel);border-color:var(--line);color:var(--txt)}
+.story b{color:var(--lblue);font-weight:600}
+/* steps */
+.steps{list-style:none;display:grid;gap:16px;position:relative}
+.steps li{display:flex;gap:22px;align-items:center;padding:22px 26px}
+.num{flex:none;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--blue),#f59e0b);color:#fff;display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:1.2rem;box-shadow:0 6px 20px rgba(13,148,136,.4)}
+.steps strong{display:block;color:#fff;font-family:'Space Grotesk';font-size:1.2rem}
+/* timeline */
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--lblue),transparent)}
+.item{position:relative;padding:24px 28px;margin-bottom:20px}
+.item::after{content:"";position:absolute;left:-34px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--lblue);box-shadow:0 0 14px var(--lblue)}
+.item h3{font-size:1.2rem}
+.meta{color:var(--lblue);font-size:.88rem;font-weight:500;margin:4px 0 8px}
+/* skills */
+.sk{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;margin-bottom:40px}
+.sk>div{padding:24px}
+.sk h3{font-size:1.05rem;margin-bottom:8px;color:var(--lblue)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.two>div{padding:26px}
+.two h3{margin-bottom:12px;font-size:1.2rem}
+.two li{margin:0 0 8px 18px}
+/* contact */
+.cta{text-align:left;padding:56px 48px;background:linear-gradient(135deg,rgba(13,148,136,.35),rgba(245,158,11,.25));border:1px solid rgba(45,212,191,.3);border-radius:28px}
+.cta h2{margin-bottom:12px}
+.cta p{font-size:1.1rem;margin-bottom:26px;color:#d3ecee}
+.cl{list-style:none;margin-bottom:26px}
+.cl li{margin-bottom:8px}
+.cl a{color:var(--lblue);text-decoration:none}
+.cl a:hover{text-decoration:underline}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:.88rem;color:#6f8e93}
+footer a{color:var(--lblue);text-decoration:none}
+
+/* animated gradient text */
+.grad{background-size:250% 100%;animation:shift 6s ease-in-out infinite}
+@keyframes shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+/* shimmer button */
+.btn.p{position:relative;overflow:hidden}
+.btn.p::after{content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3.2s infinite}
+@keyframes shine{0%{left:-70%}60%,100%{left:130%}}
+/* hero diagram */
+.hero-wrap{position:relative}
+.diagram{position:absolute;right:-30px;top:50%;transform:translateY(-55%);width:min(460px,42vw);opacity:.95;pointer-events:none}
+.diagram .flow{stroke-dasharray:6 8;animation:dash 1.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-14}}
+.diagram .nd{animation:bob 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.diagram .nd:nth-of-type(2n){animation-delay:-1.5s}.diagram .nd:nth-of-type(3n){animation-delay:-3s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.diagram .ring{animation:ring 2.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes ring{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+/* stats */
+.stats{display:flex;flex-wrap:wrap;gap:34px;margin-top:40px}
+.stats div{font-size:.82rem;color:#7f9ea3;letter-spacing:.06em;text-transform:uppercase}
+.stats b{display:block;font-family:'Space Grotesk';font-size:2.3rem;color:#fff;letter-spacing:-.02em;text-transform:none}
+.stats b em{font-style:normal;color:var(--lblue)}
+/* marquee */
+.marquee{overflow:hidden;border-block:1px solid var(--line);background:rgba(255,255,255,.02);padding:16px 0;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.track{display:flex;gap:44px;width:max-content;animation:scroll 32s linear infinite}
+.track span{white-space:nowrap;font-family:'Space Grotesk';font-weight:600;color:#8fb3b8;font-size:1.05rem}
+.track span::before{content:"\25C6";color:var(--lblue);margin-right:44px;font-size:.6rem;vertical-align:middle}
+@keyframes scroll{to{transform:translateX(-50%)}}
+/* directional reveals */
+.rv.l{transform:translateX(-40px)}.rv.r{transform:translateX(40px)}
+.rv.l.in,.rv.r.in{transform:none}
+/* animated border on hover */
+.glass::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:conic-gradient(from var(--a,0deg),transparent 0 70%,var(--lblue),#f59e0b,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:.3s;animation:spin 4s linear infinite;pointer-events:none}
+.glass:hover::after{opacity:1}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes spin{to{--a:360deg}}
+.glass{transform-style:preserve-3d;will-change:transform}
+/* timeline draw + step connector */
+.tl::before{transform-origin:top;transform:scaleY(0);transition:transform 1.6s ease}
+.tl.in::before{transform:scaleY(1)}
+.item::after{animation:node 2.4s ease-in-out infinite}
+@keyframes node{50%{box-shadow:0 0 22px var(--lblue),0 0 0 6px rgba(45,212,191,.15)}}
+.num{animation:glowp 3s ease-in-out infinite}
+@keyframes glowp{50%{box-shadow:0 6px 30px rgba(245,158,11,.55)}}
+.chips span{transition:.25s}.chips span:hover{transform:translateY(-3px);background:rgba(13,148,136,.35)}
+.dot{animation:pulse 2s infinite}
+.glass.in{transition:opacity .8s ease,transform .18s ease-out,border-color .3s}
+@media(max-width:920px){.diagram{display:none}}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:920px){
+ .burger{display:block}
+ nav{border-radius:24px;flex-wrap:wrap}
+ .links{display:none;flex-direction:column;width:100%;padding:8px 0 10px}
+ .links.open{display:flex}
+ .blocks{grid-template-columns:1fr}
+ .two{grid-template-columns:1fr}
+ section{padding:70px 0}
+ .cta{padding:36px 26px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<div id="glow"></div>
+
+<nav>
+ <a class="brand" href="#home"><span class="dot"></span>Ruvindi W.</a>
+ <button class="burger" aria-label="Menu" onclick="document.getElementById('links').classList.toggle('open')">&#9776;</button>
+ <ul class="links" id="links">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#stories">Project Stories</a></li>
+  <li><a href="#how">How I Work</a></li>
+  <li><a href="#experience">Experience</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#contact">Contact</a></li>
+ </ul>
+</nav>
+
+<section id="home">
+ <div class="wrap hero-wrap">
+  <svg class="diagram" viewBox="0 0 460 420" fill="none" aria-hidden="true">
+ <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs>
+ <path class="flow" d="M80 70 H190 M270 70 H340 V150 M340 190 V250 H270 M190 250 H120 V300 M120 340 V370 H230 M300 370 H390" stroke="url(#g)" stroke-width="2"/>
+ <g class="nd"><rect x="20" y="40" width="130" height="60" rx="14" fill="rgba(13,148,136,.18)" stroke="#2dd4bf"/><text x="85" y="76" text-anchor="middle" fill="#fff" font-size="14" font-family="Inter">Understand</text></g>
+ <g class="nd"><rect x="190" y="40" width="130" height="60" rx="14" fill="rgba(13,148,136,.18)" stroke="#2dd4bf"/><text x="255" y="76" text-anchor="middle" fill="#fff" font-size="14" font-family="Inter">Map</text></g>
+ <g class="nd"><polygon points="340,150 385,170 340,190 295,170" fill="rgba(245,158,11,.2)" stroke="#f59e0b"/><text x="340" y="175" text-anchor="middle" fill="#fff" font-size="12" font-family="Inter">Approve?</text></g>
+ <g class="nd"><rect x="190" y="220" width="130" height="60" rx="14" fill="rgba(13,148,136,.18)" stroke="#2dd4bf"/><text x="255" y="256" text-anchor="middle" fill="#fff" font-size="14" font-family="Inter">Specify</text></g>
+ <g class="nd"><rect x="55" y="300" width="130" height="60" rx="14" fill="rgba(13,148,136,.18)" stroke="#2dd4bf"/><text x="120" y="336" text-anchor="middle" fill="#fff" font-size="14" font-family="Inter">Test</text></g>
+ <g class="nd"><circle cx="265" cy="370" r="34" fill="rgba(245,158,11,.2)" stroke="#f59e0b"/><text x="265" y="375" text-anchor="middle" fill="#fff" font-size="13" font-family="Inter">Go-live</text></g>
+ <circle class="ring" cx="85" cy="70" r="10" stroke="#2dd4bf"/><circle class="ring" cx="265" cy="370" r="10" stroke="#f59e0b" style="animation-delay:-1.3s"/>
+</svg>
+  <div class="pill rv"><i></i>Open to Business Analyst and ERP consultant roles</div>
+  <h1 class="rv"><span class="grad">Ruvindi<br>Wickramasinghe</span></h1>
+  <div class="type rv" id="type"></div>
+  <p class="roles rv">Business Analyst | Systems Analyst | ERP Functional Consultant | Project Coordinator | QA and UAT Analyst</p>
+  <p class="tag rv">Clear requirements. Confident delivery.</p>
+  <p class="intro rv">I turn business needs into clear requirements and support each project from analysis through testing to go-live.</p>
+  <div class="rv"><a class="btn p" href="#projects">See my projects</a><a class="btn g" href="#contact">Contact me</a></div>
+  <div class="blocks rv"><div><small>SECTOR</small>Retail</div><div><small>SECTOR</small>Government</div><div><small>SECTOR</small>Education</div></div>
+  <div class="stats rv"><div><b data-n="6">0</b>Projects</div><div><b data-n="3">0</b>Sectors</div><div><b data-n="5">0</b>Step process</div><div><b data-n="3">0</b>Roles held</div></div>
+ </div>
+</section>
+
+<div class="marquee"><div class="track"><span>Requirements Gathering</span><span>BRD</span><span>FRD</span><span>SRS</span><span>User Stories</span><span>BPMN</span><span>Process Mapping</span><span>ERP Implementation</span><span>Master Data</span><span>UAT</span><span>SIT</span><span>Regression Testing</span><span>Jira</span><span>Agile and Scrum</span><span>MySQL</span><span>Data Validation</span><span>Status Reporting</span><span>Risk Escalation</span><span>Requirements Gathering</span><span>BRD</span><span>FRD</span><span>SRS</span><span>User Stories</span><span>BPMN</span><span>Process Mapping</span><span>ERP Implementation</span><span>Master Data</span><span>UAT</span><span>SIT</span><span>Regression Testing</span><span>Jira</span><span>Agile and Scrum</span><span>MySQL</span><span>Data Validation</span><span>Status Reporting</span><span>Risk Escalation</span></div></div>
+
+<section id="about">
+ <div class="wrap about">
+  <span class="eyebrow rv">About</span>
+  <h2 class="rv"><span class="grad">Clear requirements. Confident delivery.</span></h2>
+  <p class="rv">Business Analyst, ERP Functional Consultant and Project Coordinator with experience across retail, government and education. I turn business needs into clear requirements and support each project from analysis through testing to go-live.</p>
+  <div class="chips rv"><span>Retail</span><span>Government</span><span>Education</span><span>ERP</span><span>Mobile and Web Apps</span></div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="wrap">
+  <span class="eyebrow rv">Projects</span>
+  <h2 class="rv">Selected work</h2>
+  <div class="grid">
+   <div class="glass card rv"><div class="n">01</div><h3>Singer Horizon: built for Singer's branch managers</h3><p><span class="role">I owned all the BA work.</span> Turned branch needs into requirements, process flows, user stories, acceptance criteria and UAT support.</p></div>
+   <div class="glass card rv"><div class="n">02</div><h3>DOE Online Certificate System: a fresh start for the Department of Examinations</h3><p><span class="role">I shaped what the new system needed to do.</span> Delivered requirements and process documentation.</p></div>
+   <div class="glass card rv"><div class="n">03</div><h3>MOB POS and Mini ERP: counter to back office</h3><p><span class="role">Project coordinator keeping client, developers and QA moving together.</span> Delivered requirements, progress tracking and testing support.</p></div>
+   <div class="glass card rv"><div class="n">04</div><h3>Retail shops: Tiny Togs, TNR and Mama Cook</h3><p><span class="role">Project coordinator, one steady hand across three shops.</span> Coordinated delivery for each shop. Tracked progress, supported user testing and go-live.</p></div>
+   <div class="glass card rv"><div class="n">05</div><h3>Government Database Management System</h3><p><span class="role">Project coordinator for a government sector client.</span> Coordinated the project and documented requirements. Supported data validation to keep the data reliable.</p></div>
+   <div class="glass card rv"><div class="n">06</div><h3>DP Education Project</h3><p><span class="role">Project coordinator keeping delivery on track.</span> Coordinated delivery and tracked progress.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="stories">
+ <div class="wrap">
+  <span class="eyebrow rv">Project Stories</span>
+  <h2 class="rv">The story behind each project</h2>
+  <div class="glass story rv"><h3>Mobile app for retail branch managers</h3><div class="chips sm"><span>Retail · Mobile app · Sole business analyst</span></div><p><b>The story:</b> a large retail brand needed a mobile app for the people who run its branches, so managers could do their daily work in one place.</p><p><b>What I did:</b> I was the business analyst and owned all of the analysis. I met branch managers and stakeholders to understand how branches really work and what slowed them down. I turned those needs into business requirements, process flows, user stories and acceptance criteria that the team could build from. I answered the developers' questions, kept the requirements up to date as things changed, then supported UAT, validated defects and checked the app against what the business asked for.</p><div class="chips sm"><span>Requirements gathering</span><span>Process flows</span><span>User stories</span><span>Acceptance criteria</span><span>UAT support</span><span>Defect validation</span></div></div>
+  <div class="glass story rv"><h3>Online certificate system for a government department</h3><div class="chips sm"><span>Government · Web system · Requirements and process documentation</span></div><p><b>The story:</b> a government education department's online certificate system was due for a revamp.</p><p><b>What I did:</b> I studied how the existing system and its processes worked and found where users and staff struggled. I worked with stakeholders to decide what the new version needed to do, then documented the current-state and future-state processes and wrote the requirements behind the improved system, so the build team had a clear, agreed specification.</p><div class="chips sm"><span>Current-state analysis</span><span>Future-state process</span><span>BRD and requirements</span><span>Stakeholder workshops</span></div></div>
+  <div class="glass story rv"><h3>Point-of-sale and mini ERP for a retail clothing brand</h3><div class="chips sm"><span>Retail · POS and ERP · Project coordination and BA support</span></div><p><b>The story:</b> a retail clothing brand needed a point-of-sale system and a mini ERP, from the shop counter to the back office.</p><p><b>What I did:</b> As project coordinator I kept the client, developers and QA moving together. I captured and documented requirements, tracked progress and reported status, raised risks and issues early, and supported testing until the system was ready for the business.</p><div class="chips sm"><span>Requirements capture</span><span>Progress tracking</span><span>Status reporting</span><span>Risk escalation</span><span>Testing support</span></div></div>
+  <div class="glass story rv"><h3>Systems for three retail shops</h3><div class="chips sm"><span>Retail · Multi-shop delivery · Project coordination</span></div><p><b>The story:</b> three retail shops, each with its own system to deliver and its own go-live.</p><p><b>What I did:</b> I was the steady coordinator across all three. For each shop I coordinated delivery, tracked progress and kept the client and the team aligned. I supported user testing, helped sort out issues found in testing and helped each shop go live.</p><div class="chips sm"><span>Delivery coordination</span><span>Progress tracking</span><span>User testing</span><span>Go-live support</span></div></div>
+  <div class="glass story rv"><h3>Document database system for a government client</h3><div class="chips sm"><span>Government · Database system · Requirements and data validation</span></div><p><b>The story:</b> a government sector client needed a dependable database system to hold its documents.</p><p><b>What I did:</b> I coordinated the project and documented the requirements with the client. I supported data validation, checking that the information moved into the system was accurate and complete, so the data could be trusted.</p><div class="chips sm"><span>Project coordination</span><span>Requirements documentation</span><span>Data validation</span></div></div>
+  <div class="glass story rv"><h3>Education sector delivery project</h3><div class="chips sm"><span>Education · Project coordination</span></div><p><b>The story:</b> an education project that needed steady coordination to stay on schedule.</p><p><b>What I did:</b> I coordinated delivery between the client and the team, tracked progress against the plan and kept everyone informed so the project stayed on track.</p><div class="chips sm"><span>Delivery coordination</span><span>Progress tracking</span></div></div>
+ </div>
+</section>
+
+<section id="how">
+ <div class="wrap">
+  <span class="eyebrow rv">How I Work</span>
+  <h2 class="rv">Five steps, every project</h2>
+  <ol class="steps">
+   <li class="glass rv"><span class="num">1</span><div><strong>Understand</strong>Clarify user and stakeholder needs to find the real problem.</div></li>
+   <li class="glass rv"><span class="num">2</span><div><strong>Map</strong>Document the current state and design the future process.</div></li>
+   <li class="glass rv"><span class="num">3</span><div><strong>Specify</strong>Create BRDs, user stories and acceptance criteria.</div></li>
+   <li class="glass rv"><span class="num">4</span><div><strong>Test</strong>Support SIT and UAT and validate defects.</div></li>
+   <li class="glass rv"><span class="num">5</span><div><strong>Support</strong>Assist users after go-live and keep reporting current.</div></li>
+  </ol>
+ </div>
+</section>
+
+<section id="experience">
+ <div class="wrap">
+  <span class="eyebrow rv">Experience</span>
+  <h2 class="rv">Where I've worked</h2>
+  <div class="tl">
+   <div class="glass item rv"><h3>Associate Business Analyst, DataBox Technologies</h3><div class="meta">Jun 2026 to present</div><p>Requirements, BRDs, user stories, process flows, UAT support and defect validation.</p></div>
+   <div class="glass item rv"><h3>Junior ERP Consultant, Tech84</h3><div class="meta">Sep 2025 to Jun 2026</div><p>Tracked multiple ERP implementations, status reports, requirements, SIT and UAT, data validation and master data setup.</p></div>
+   <div class="glass item rv"><h3>Content Support Executive, Orfium Sri Lanka</h3><div class="meta">Jun 2024 to Aug 2025</div><p>Content management systems and backend workflows, Jira, data accuracy.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="wrap">
+  <span class="eyebrow rv">Skills</span>
+  <h2 class="rv">Skills, Education and Certifications</h2>
+  <div class="sk">
+   <div class="glass rv"><h3>Business analysis</h3><p>Requirements gathering, BRD, FRD, SRS, user stories, process mapping, BPMN.</p></div>
+   <div class="glass rv"><h3>ERP and systems</h3><p>ERP implementation, configuration, master data, POS.</p></div>
+   <div class="glass rv"><h3>Testing and QA</h3><p>Manual testing, SIT, UAT, regression testing, defect reporting, Jira.</p></div>
+   <div class="glass rv"><h3>Project coordination</h3><p>Tracking, status reporting, risk escalation, dashboards, Agile and Scrum.</p></div>
+   <div class="glass rv"><h3>Data</h3><p>MySQL, data validation.</p></div>
+  </div>
+  <div class="two">
+   <div class="glass rv"><h3>Education</h3><ul><li>BSc (Hons) Software Engineering, Plymouth University (UK), 2025, Second Class Upper Division.</li><li>Advanced Level, 2022, 2As and 1B.</li></ul></div>
+   <div class="glass rv"><h3>Certifications</h3><ul><li>ECBA (IIBA), in progress.</li><li>PSM I (Scrum.org), in progress.</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap">
+  <div class="cta rv">
+   <span class="eyebrow">Contact</span>
+   <h2><span class="grad">Let's work together.</span></h2>
+   <p>I am open to business analyst and ERP consultant roles.</p>
+   <ul class="cl">
+    <li>Email: <a href="mailto:ruvindiwickramasinghe@gmail.com">ruvindiwickramasinghe@gmail.com</a></li>
+    <li>LinkedIn: <a href="https://linkedin.com/in/wickramasinghe123" target="_blank" rel="noopener">linkedin.com/in/wickramasinghe123</a></li>
+    <li>Phone: <a href="tel:0713308672">0713308672</a></li>
+   </ul>
+   <a class="btn p" href="mailto:ruvindiwickramasinghe@gmail.com">Email me</a>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">&copy; 2026 Ruvindi Wickramasinghe &middot; <a href="mailto:ruvindiwickramasinghe@gmail.com">ruvindiwickramasinghe@gmail.com</a></div>
+</footer>
+
+<script>
+// active nav + progress bar
+const links=[...document.querySelectorAll('.links a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const bar=document.getElementById('bar');
+function onScroll(){
+  let cur=0;
+  secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<=160)cur=i;});
+  if(innerHeight+scrollY>=document.body.scrollHeight-4)cur=secs.length-1;
+  links.forEach((a,i)=>a.classList.toggle('active',i===cur));
+  bar.style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+'%';
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+links.forEach(a=>a.addEventListener('click',()=>document.getElementById('links').classList.remove('open')));
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+// spotlight on cards + cursor glow
+document.querySelectorAll('.glass').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+const glow=document.getElementById('glow');
+addEventListener('mousemove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+
+// directional reveals
+document.querySelectorAll('.grid .rv,.sk .rv').forEach((el,i)=>el.classList.add(i%2?'r':'l'));
+document.querySelectorAll('.story.rv,.steps .rv').forEach((el,i)=>el.classList.add(i%2?'r':'l'));
+document.querySelectorAll('.tl').forEach(el=>io.observe(el));
+// counters
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,n=+el.dataset.n;let v=0;const t=setInterval(()=>{v++;el.textContent=v;if(v>=n)clearInterval(t)},180);co.unobserve(el)}),{threshold:.6});
+document.querySelectorAll('[data-n]').forEach(el=>co.observe(el));
+// 3D tilt on cards
+document.querySelectorAll('.card,.sk .glass').forEach(c=>{
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(700px) rotateX(${-y*7}deg) rotateY(${x*9}deg) translateY(-5px)`});
+  c.addEventListener('mouseleave',()=>c.style.transform='');
+});
+// hero parallax
+addEventListener('scroll',()=>{document.querySelectorAll('.blob').forEach((b,i)=>b.style.marginTop=(scrollY*(.05+i*.04))+'px')},{passive:true});
+// typing effect
+const words=['Business Analyst','ERP Functional Consultant','Project Coordinator','QA and UAT Analyst','Systems Analyst'];
+const t=document.getElementById('type');let w=0,c=0,del=false;
+(function tick(){
+  const word=words[w];
+  t.textContent=word.slice(0,c);
+  if(!del&&c===word.length){del=true;return setTimeout(tick,1600)}
+  if(del&&c===0){del=false;w=(w+1)%words.length}
+  c+=del?-1:1;setTimeout(tick,del?35:75);
+})();
+</script>
+</body>
+</html>
